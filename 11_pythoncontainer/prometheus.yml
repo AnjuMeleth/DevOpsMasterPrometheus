@@ -10,8 +10,12 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9100']
-  - job_name: 'papp'
+  - job_name: 'pcontainer'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:8000']      
+      - targets: ['localhost:8090']      
+  - job_name: 'demoapp'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:8082']          
   

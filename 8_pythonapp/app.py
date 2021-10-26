@@ -1,5 +1,4 @@
 import http.server
-from prometheus_client import start_http_server
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -8,6 +7,5 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         self.wfile.write(b"Hello World")
 
 if __name__ == "__main__":
-    start_http_server(8000)
     server = http.server.HTTPServer(('0.0.0.0', 8001), MyHandler)
     server.serve_forever()
